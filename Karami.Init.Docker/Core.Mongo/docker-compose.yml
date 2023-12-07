@@ -1,0 +1,11 @@
+name: 'mongo_service'
+services:
+  mongo_db:
+    image: mongo
+    container_name: 'core_mongo_db'
+    restart: on-failure
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=sa
+      - MONGO_INITDB_ROOT_PASSWORD=Hasan313313!!

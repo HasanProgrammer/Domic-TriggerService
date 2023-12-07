@@ -1,0 +1,11 @@
+name: 'sql_service'
+services:
+  sql_server:
+    image: 'mcr.microsoft.com/mssql/server'
+    container_name: 'core_sql_db'
+    restart: on-failure
+    ports:
+        - '1433:1433'
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=Hasan313@@313!!

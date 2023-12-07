@@ -1,0 +1,21 @@
+#Declare Queue Pattern ( DQP )
+
+[ServiceName]_[TableName]_Queue | Example : Article_Category_Queue
+
+=====================================================================
+
+#Declare Exchange Pattern ( DEP )
+
+[ServiceName]_[TableName]_Exchange | Example : Article_Article_Exchange
+
+*******************************************************************************
+
+#Declare Retry Queue Pattern ( DQP )
+
+[ServiceName]_[TableName]_Queue_Retry | Example : Article_Category_Queue_Retry
+
+=====================================================================
+
+#Declare Retry Exchange Pattern ( DEP )
+
+[ServiceName]_[TableName]_Exchange_Retry_[Step] | Example : Article_Category_Exchange_Retry_1

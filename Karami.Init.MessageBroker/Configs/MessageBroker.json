@@ -1,0 +1,16 @@
+﻿{
+  "RabbitMQ" :
+  {
+    "External" :
+    {
+      "Production.Username"  : "guest"                ,
+      "Production.Password"  : "guest"                ,
+      "Production.HostName"  : "host.docker.internal" ,
+      "Production.Port"      : 5672                   ,
+      "Development.Username" : "guest"                ,
+      "Development.Password" : "guest"                ,
+      "Development.HostName" : "127.0.0.1"            ,
+      "Development.Port"     : 5672
+      }
+  }
+}

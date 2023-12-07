@@ -1,0 +1,8 @@
+name: 'redis_service'
+services:
+  redis_cache:
+    image: 'redis'
+    container_name: 'core_redis'
+    command: 'redis-server'
+    ports:
+      - '6379:6379'
