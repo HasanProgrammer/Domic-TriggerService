@@ -1,5 +1,4 @@
-﻿using Karami.Core.Common.ClassExtensions;
-using Karami.Core.Domain.Constants;
+﻿using Karami.Core.Domain.Constants;
 using Karami.Core.Infrastructure.Extensions;
 using Karami.Init.MessageBroker.AggregateArticleService;
 using Karami.Init.MessageBroker.StateTrackerService;
@@ -7,9 +6,8 @@ using Karami.Init.MessageBroker.UserService;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 
-using Article     = Karami.Init.MessageBroker.ArticleService.Article;
-using Environment = Karami.Core.Common.ClassConsts.Environment;
-using Exception   = System.Exception;
+using Article   = Karami.Init.MessageBroker.ArticleService.Article;
+using Exception = System.Exception;
 
 using User                          = Karami.Init.MessageBroker.UserService.User;
 using Category                      = Karami.Init.MessageBroker.CategoryService.Category;
@@ -35,10 +33,10 @@ var pathConfig = Path.Combine(rootDir, "Configs", "MessageBroker.json");
 var config = new ConfigurationBuilder().AddJsonFile(pathConfig).Build();
 
 var factory = new ConnectionFactory {
-    HostName = config.GetExternalRabbitHostName(Environment.Development),
-    UserName = config.GetExternalRabbitUsername(Environment.Development),
-    Password = config.GetExternalRabbitPassword(Environment.Development),
-    Port     = config.GetExternalRabbitPort(Environment.Development)
+    HostName = config.GetValue<string>("RabbitMQ:External:HostName"),
+    UserName = config.GetValue<string>("RabbitMQ:External:Username"),
+    Password = config.GetValue<string>("RabbitMQ:External:Password"),
+    Port     = config.GetValue<int>("RabbitMQ:External:Port")
 };
             
 var connection = factory.CreateConnection();
