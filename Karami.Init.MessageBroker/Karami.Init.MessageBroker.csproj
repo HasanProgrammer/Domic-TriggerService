@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Domic.Architecture.Infrastructure" Version="1.1.8" />
+    <PackageReference Include="Domic.Architecture.Infrastructure" Version="1.4.0" />
   </ItemGroup>
 
   <ItemGroup>
