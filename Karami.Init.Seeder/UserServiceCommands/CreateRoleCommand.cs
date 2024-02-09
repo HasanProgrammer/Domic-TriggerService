@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-using Karami.Core.Domain.Implementations;
+using Karami.Core.Infrastructure.Implementations;
 
 namespace Karami.Init.Seeder.UserServiceCommands;
 
@@ -13,7 +13,7 @@ public class CreateRoleCommand
     public static async Task<string> ExecuteAsync(SqlConnection connection)
     {
         var now             = DateTime.Now;
-        var persianDateTime = new DotrisDateTime().ToPersianShortDate(now);
+        var persianDateTime = new DomicDateTime().ToPersianShortDate(now);
         string roleId       = Guid.NewGuid().ToString();
         
         const string createCommand = """

@@ -1,5 +1,5 @@
 ﻿using System.Data.SqlClient;
-using Karami.Core.Domain.Implementations;
+using Karami.Core.Infrastructure.Implementations;
 
 namespace Karami.Init.Seeder.UserServiceCommands;
 
@@ -14,7 +14,7 @@ public class CreatePermissionCommand
     public static async Task<string> ExecuteAsync(SqlConnection connection, string roleId)
     {
         var now             = DateTime.Now;
-        var persianDateTime = new DotrisDateTime().ToPersianShortDate(now);
+        var persianDateTime = new DomicDateTime().ToPersianShortDate(now);
         string permissionId = Guid.NewGuid().ToString();
         
         const string createCommand = """

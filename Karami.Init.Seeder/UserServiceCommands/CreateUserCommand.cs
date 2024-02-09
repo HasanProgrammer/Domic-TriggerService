@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 using Karami.Core.Domain.Extensions;
-using Karami.Core.Domain.Implementations;
+using Karami.Core.Infrastructure.Implementations;
 
 namespace Karami.Init.Seeder.UserServiceCommands;
 
@@ -14,7 +14,7 @@ public class CreateUserCommand
     public static async Task<string> ExecuteAsync(SqlConnection connection)
     {
         var now             = DateTime.Now;
-        var persianDateTime = new DotrisDateTime().ToPersianShortDate(now);
+        var persianDateTime = new DomicDateTime().ToPersianShortDate(now);
         string userId       = Guid.NewGuid().ToString();
         
         const string description = "من حسن کرمی محب ؛ برنامه نویس و عاشق معماری های برنامه نویسی ، 26 ساله ، کشور ایران و اهل شهرستان شهریار هستم";
