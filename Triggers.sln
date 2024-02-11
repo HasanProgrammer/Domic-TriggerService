@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Init.Docker", "Karami.Init.Docker\Karami.Init.Docker.csproj", "{3274C172-AE8D-42E8-8C39-111126E585D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Init.Docker", "Domic.Init.Docker\Domic.Init.Docker.csproj", "{3274C172-AE8D-42E8-8C39-111126E585D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Init.MessageBroker", "Karami.Init.MessageBroker\Karami.Init.MessageBroker.csproj", "{18F9385F-7EAD-4518-870E-2D6EBA29BB7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Init.MessageBroker", "Domic.Init.MessageBroker\Domic.Init.MessageBroker.csproj", "{18F9385F-7EAD-4518-870E-2D6EBA29BB7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Karami.Init.Seeder", "Karami.Init.Seeder\Karami.Init.Seeder.csproj", "{0EF10C47-F125-4B2E-BF4A-D2A869338285}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domic.Init.Seeder", "Domic.Init.Seeder\Domic.Init.Seeder.csproj", "{0EF10C47-F125-4B2E-BF4A-D2A869338285}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
