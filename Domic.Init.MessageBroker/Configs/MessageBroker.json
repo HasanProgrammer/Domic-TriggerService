@@ -3,9 +3,9 @@
   {
     "External" :
     {
-      "HostName" : "127.0.0.1" ,
-      "Username" : "guest"     ,
-      "Password" : "guest"     ,
+      "HostName" : "127.0.0.1"    ,
+      "Username" : "domic"        ,
+      "Password" : "Domic123!@#"  ,
       "Port"     : 5672
     }
   }
