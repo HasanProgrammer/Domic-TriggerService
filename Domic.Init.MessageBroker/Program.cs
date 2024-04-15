@@ -2,6 +2,7 @@
 using Domic.Core.Infrastructure.Extensions;
 using Domic.Init.MessageBroker.AggregateArticleService;
 using Domic.Init.MessageBroker.StateTrackerService;
+using Domic.Init.MessageBroker.TermService;
 using Domic.Init.MessageBroker.UserService;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
@@ -17,6 +18,8 @@ using PermissionOfAuth              = Domic.Init.MessageBroker.AuthService.Permi
 using CategoryOfArticle             = Domic.Init.MessageBroker.ArticleService.Category;
 using UserOfArticle                 = Domic.Init.MessageBroker.ArticleService.User;
 using ArticleOfAggregateArticle     = Domic.Init.MessageBroker.AggregateArticleService.Article;
+using TermOfAggregateTerm           = Domic.Init.MessageBroker.AggregateTermService.Term;
+using VideoOfAggregateTerm          = Domic.Init.MessageBroker.AggregateTermService.Video;
 using CategoryOfAggregateArticle    = Domic.Init.MessageBroker.AggregateArticleService.Category;
 using UserOfAggregateArticle        = Domic.Init.MessageBroker.AggregateArticleService.User;
 using ExceptionOfStateTracker       = Domic.Init.MessageBroker.StateTrackerService.Exception;
@@ -75,6 +78,14 @@ try
     UserOfAggregateArticle.Register(channel);
     ArticleCommentAnswer.Register(channel);
     ArticleComment.Register(channel);
+    
+    //TermService
+    Term.Register(channel);
+    Video.Register(channel);
+    
+    //AggregateTermService
+    TermOfAggregateTerm.Register(channel);
+    VideoOfAggregateTerm.Register(channel);
 
     //StateTrackerService
     Event.Register(channel);
