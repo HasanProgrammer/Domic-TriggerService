@@ -31,3 +31,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       ADVERTISED_HOST_NAME: kafka
       KAFKA_ADVERTISED_HOSTNAME: 127.0.0.1
+      
+networks:
+  kafka_network:
+    external: true
