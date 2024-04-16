@@ -5,4 +5,4 @@ services:
     container_name: 'core_redis'
     command: 'redis-server'
     ports:
-      - '6500:6500'
+      - '6379:6379'

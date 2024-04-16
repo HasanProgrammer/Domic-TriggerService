@@ -5,7 +5,7 @@ services:
     container_name: 'core_mongo_db'
     restart: on-failure
     ports:
-      - '2800:2800'
+      - '27017:27017'
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=sa
-      - MONGO_INITDB_ROOT_PASSWORD=Hasan313313!!
+      - MONGO_INITDB_ROOT_USERNAME=domic
+      - MONGO_INITDB_ROOT_PASSWORD=Domic123!@#
