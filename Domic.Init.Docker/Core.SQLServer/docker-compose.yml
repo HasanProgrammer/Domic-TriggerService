@@ -5,7 +5,7 @@ services:
     container_name: 'core_sql_db'
     restart: on-failure
     ports:
-        - '1433:1433'
+        - '1633:1433'
     environment:
         - ACCEPT_EULA=Y
         - SA_PASSWORD=Domic123!@#

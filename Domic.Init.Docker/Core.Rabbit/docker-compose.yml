@@ -8,8 +8,10 @@ services:
       - '15672:15672'
       - '5672:5672'
     environment:
-      - RABBITMQ_DEFAULT_USER=domic
-      - RABBITMQ_DEFAULT_PASS=Domic123!@#
+#    - RABBITMQ_DEFAULT_USER=guest
+#    - RABBITMQ_DEFAULT_PASS=guest
+     - RABBITMQ_DEFAULT_USER=domic
+     - RABBITMQ_DEFAULT_PASS=Domic123!@#
     networks:
       - domic
 
