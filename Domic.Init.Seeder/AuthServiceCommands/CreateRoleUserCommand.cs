@@ -1,5 +1,4 @@
 ﻿using System.Data.SqlClient;
-using Domic.Core.Common.ClassExtensions;
 
 namespace Domic.Init.Seeder.AuthServiceCommands;
 

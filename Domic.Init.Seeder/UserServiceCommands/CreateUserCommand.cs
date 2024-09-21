@@ -1,6 +1,6 @@
 ﻿using System.Data.SqlClient;
 using Domic.Core.Domain.Extensions;
-using Domic.Core.Infrastructure.Implementations;
+using Domic.Core.Infrastructure.Concretes;
 
 namespace Domic.Init.Seeder.UserServiceCommands;
 
