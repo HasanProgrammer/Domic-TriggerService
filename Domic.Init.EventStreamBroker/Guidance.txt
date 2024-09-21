@@ -1,0 +1,9 @@
+#Declare Topic Pattern ( DTP )
+
+[TableName] | Example : Article
+
+=====================================================================
+
+#Declare Retry Topic Pattern ( DRTP )
+
+[ServiceName]-Retry-[TableName] | Example : ArticleService-Retry-Article

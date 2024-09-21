@@ -1,0 +1,11 @@
+﻿{
+  "Kafka" :
+  {
+    "External" :
+    {
+      "HostName" : "127.0.0.1"    ,
+      "Username" : "domic"        ,
+      "Password" : "Domic123!@#"
+    }
+  }
+}
