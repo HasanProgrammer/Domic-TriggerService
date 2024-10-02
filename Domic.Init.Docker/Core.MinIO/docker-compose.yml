@@ -5,13 +5,13 @@ services:
     container_name: 'core_minio'
     restart: on-failure
     ports:
-        - '9000:9000'
+        - '3200:9000'
     environment:
       - MINIO_ROOT_USER=domic
       - MINIO_ROOT_PASSWORD=domic123
     volumes:
       - minio-data:/data
-    command: server /data --console-address ":9001"
+    command: server /data --console-address ":3300"
 
 volumes:
   minio-data:
