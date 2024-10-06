@@ -1,6 +1,7 @@
 ﻿using Domic.Core.Domain.Constants;
 using Domic.Core.Infrastructure.Extensions;
 using Domic.Init.MessageBroker.AggregateArticleService;
+using Domic.Init.MessageBroker.FinancialService;
 using Domic.Init.MessageBroker.StateTrackerService;
 using Domic.Init.MessageBroker.TermService;
 using Domic.Init.MessageBroker.TicketService;
@@ -11,26 +12,30 @@ using RabbitMQ.Client;
 using Article   = Domic.Init.MessageBroker.ArticleService.Article;
 using Exception = System.Exception;
 
-using User                           = Domic.Init.MessageBroker.UserService.User;
-using Category                       = Domic.Init.MessageBroker.CategoryService.Category;
-using UserOfAuth                     = Domic.Init.MessageBroker.AuthService.User;
-using RoleOfAuth                     = Domic.Init.MessageBroker.AuthService.Role;
-using PermissionOfAuth               = Domic.Init.MessageBroker.AuthService.Permission;
-using CategoryOfArticle              = Domic.Init.MessageBroker.ArticleService.Category;
-using UserOfArticle                  = Domic.Init.MessageBroker.ArticleService.User;
-using ArticleOfAggregateArticle      = Domic.Init.MessageBroker.AggregateArticleService.Article;
-using TermOfAggregateTerm            = Domic.Init.MessageBroker.AggregateTermService.Term;
-using VideoOfAggregateTerm           = Domic.Init.MessageBroker.AggregateTermService.Video;
-using CategoryOfAggregateArticle     = Domic.Init.MessageBroker.AggregateArticleService.Category;
-using UserOfAggregateArticle         = Domic.Init.MessageBroker.AggregateArticleService.User;
-using ExceptionOfStateTracker        = Domic.Init.MessageBroker.StateTrackerService.Exception;
-using ArticleCommentOfComment        = Domic.Init.MessageBroker.CommentService.ArticleComment;
-using ArticleCommentAnswerOfComment  = Domic.Init.MessageBroker.CommentService.ArticleCommentAnswer;
-using ArticleOfComment               = Domic.Init.MessageBroker.CommentService.Article;
-using TicketOfAggregateTicket        = Domic.Init.MessageBroker.AggregateTicketService.Ticket;
-using TicketCommentOfAggregateTicket = Domic.Init.MessageBroker.AggregateTicketService.TicketComment;
-using UserOfAggregateTicket          = Domic.Init.MessageBroker.AggregateTicketService.User;
-using UserOfTicket                   = Domic.Init.MessageBroker.TicketService.User;
+using User                                = Domic.Init.MessageBroker.UserService.User;
+using Category                            = Domic.Init.MessageBroker.CategoryService.Category;
+using UserOfAuth                          = Domic.Init.MessageBroker.AuthService.User;
+using RoleOfAuth                          = Domic.Init.MessageBroker.AuthService.Role;
+using PermissionOfAuth                    = Domic.Init.MessageBroker.AuthService.Permission;
+using CategoryOfArticle                   = Domic.Init.MessageBroker.ArticleService.Category;
+using UserOfArticle                       = Domic.Init.MessageBroker.ArticleService.User;
+using ArticleOfAggregateArticle           = Domic.Init.MessageBroker.AggregateArticleService.Article;
+using TermOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Term;
+using VideoOfAggregateTerm                = Domic.Init.MessageBroker.AggregateTermService.Video;
+using CategoryOfAggregateArticle          = Domic.Init.MessageBroker.AggregateArticleService.Category;
+using UserOfAggregateArticle              = Domic.Init.MessageBroker.AggregateArticleService.User;
+using ExceptionOfStateTracker             = Domic.Init.MessageBroker.StateTrackerService.Exception;
+using ArticleCommentOfComment             = Domic.Init.MessageBroker.CommentService.ArticleComment;
+using ArticleCommentAnswerOfComment       = Domic.Init.MessageBroker.CommentService.ArticleCommentAnswer;
+using ArticleOfComment                    = Domic.Init.MessageBroker.CommentService.Article;
+using TicketOfAggregateTicket             = Domic.Init.MessageBroker.AggregateTicketService.Ticket;
+using TicketCommentOfAggregateTicket      = Domic.Init.MessageBroker.AggregateTicketService.TicketComment;
+using UserOfAggregateTicket               = Domic.Init.MessageBroker.AggregateTicketService.User;
+using UserOfTicket                        = Domic.Init.MessageBroker.TicketService.User;
+using UserOfFinancial                     = Domic.Init.MessageBroker.FinancialService.User;
+using AccountOfAggregateFinancial         = Domic.Init.MessageBroker.AggregateFinancialService.Account;
+using GiftTransactionOfAggregateFinancial = Domic.Init.MessageBroker.AggregateFinancialService.GiftTransaction;
+using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
 
 #region Init
 
@@ -106,6 +111,16 @@ try
     TicketOfAggregateTicket.Register(channel);
     TicketCommentOfAggregateTicket.Register(channel);
     UserOfAggregateTicket.Register(channel);
+    
+    //FinancialService
+    Account.Register(channel);
+    GiftTransaction.Register(channel);
+    UserOfFinancial.Register(channel);
+    
+    //AggregateFinancialService
+    AccountOfAggregateFinancial.Register(channel);
+    GiftTransactionOfAggregateFinancial.Register(channel);
+    UserOfAggregateFinancial.Register(channel);
     
     //ServiceRegistry
     
