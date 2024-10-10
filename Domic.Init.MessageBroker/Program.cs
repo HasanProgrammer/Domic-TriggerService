@@ -30,6 +30,7 @@ using ArticleOfComment                    = Domic.Init.MessageBroker.CommentServ
 using TicketOfAggregateTicket             = Domic.Init.MessageBroker.AggregateTicketService.Ticket;
 using TicketCommentOfAggregateTicket      = Domic.Init.MessageBroker.AggregateTicketService.TicketComment;
 using UserOfAggregateTicket               = Domic.Init.MessageBroker.AggregateTicketService.User;
+using CategoryOfAggregateTicket           = Domic.Init.MessageBroker.AggregateTicketService.Category;
 using UserOfTicket                        = Domic.Init.MessageBroker.TicketService.User;
 using UserOfFinancial                     = Domic.Init.MessageBroker.FinancialService.User;
 using AccountOfAggregateFinancial         = Domic.Init.MessageBroker.AggregateFinancialService.Account;
@@ -110,6 +111,7 @@ try
     TicketOfAggregateTicket.Register(channel);
     TicketCommentOfAggregateTicket.Register(channel);
     UserOfAggregateTicket.Register(channel);
+    CategoryOfAggregateTicket.Register(channel);
     
     //FinancialService
     Account.Register(channel);
