@@ -6,3 +6,9 @@ services:
     command: 'redis-server'
     ports:
       - '6379:6379'
+    networks:
+      - domic
+
+networks:
+  domic:
+    external: true

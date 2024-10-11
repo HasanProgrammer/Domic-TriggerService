@@ -9,3 +9,9 @@ services:
     environment:
         - ACCEPT_EULA=Y
         - SA_PASSWORD=Domic123!@#
+    networks:
+      - domic
+
+networks:
+  domic:
+    external: true
