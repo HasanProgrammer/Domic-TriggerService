@@ -12,6 +12,12 @@ services:
     volumes:
       - minio-data:/data
     command: server /data --console-address ":3300"
+    networks:
+      - domic
 
 volumes:
   minio-data:
+    
+networks:
+  domic:
+    external: true

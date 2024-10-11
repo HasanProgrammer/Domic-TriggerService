@@ -9,3 +9,9 @@ services:
     environment:
       - MONGO_INITDB_ROOT_USERNAME=domic
       - MONGO_INITDB_ROOT_PASSWORD=434624
+    networks:
+      - domic
+
+networks:
+  domic:
+    external: true

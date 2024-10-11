@@ -45,7 +45,6 @@ services:
     depends_on:
       - kafka
       
-
 networks:
   domic:
     external: true
