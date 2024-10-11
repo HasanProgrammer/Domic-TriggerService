@@ -1,6 +1,6 @@
 name: 'minio_service'
 services:
-  minio:
+  domic.minio:
     image: 'minio/minio'
     container_name: 'core_minio'
     restart: on-failure

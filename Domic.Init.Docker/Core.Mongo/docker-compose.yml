@@ -1,6 +1,6 @@
 name: 'mongo_service'
 services:
-  mongo_db:
+  domic.mongo.db:
     image: mongo
     container_name: 'core_mongo_db'
     restart: on-failure

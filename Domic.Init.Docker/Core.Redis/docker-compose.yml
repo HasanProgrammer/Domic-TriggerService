@@ -1,6 +1,6 @@
 name: 'redis_service'
 services:
-  redis_cache:
+  domic.redis:
     image: 'redis'
     container_name: 'core_redis'
     command: 'redis-server'
