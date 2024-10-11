@@ -1,5 +1,7 @@
 name: 'sql_service'
+
 services:
+  
   domic.sql.server:
     image: 'mcr.microsoft.com/mssql/server'
     container_name: 'core_sql_db'

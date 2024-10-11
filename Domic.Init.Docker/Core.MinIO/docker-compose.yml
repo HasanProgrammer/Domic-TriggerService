@@ -1,5 +1,7 @@
 name: 'minio_service'
+
 services:
+  
   domic.minio:
     image: 'minio/minio'
     container_name: 'core_minio'

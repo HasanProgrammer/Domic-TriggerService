@@ -1,5 +1,7 @@
 name: 'rabbit_service'
+
 services:
+  
   domic.rabbit.mq:
     image: 'rabbitmq:3-management'
     container_name: 'core_rabbit'

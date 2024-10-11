@@ -1,5 +1,7 @@
 name: 'mongo_service'
+
 services:
+  
   domic.mongo.db:
     image: mongo
     container_name: 'core_mongo_db'
