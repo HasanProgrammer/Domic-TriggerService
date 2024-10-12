@@ -1,4 +1,4 @@
-﻿using Domic.Init.MessageBroker.AggregateArticleService;
+﻿using Domic.Init.MessageBroker.CommentService;
 using Domic.Init.MessageBroker.DiscoveryService;
 using Domic.Init.MessageBroker.FinancialService;
 using Domic.Init.MessageBroker.StateTrackerService;
@@ -34,8 +34,13 @@ using CategoryOfAggregateTicket           = Domic.Init.MessageBroker.AggregateTi
 using UserOfTicket                        = Domic.Init.MessageBroker.TicketService.User;
 using UserOfFinancial                     = Domic.Init.MessageBroker.FinancialService.User;
 using AccountOfAggregateFinancial         = Domic.Init.MessageBroker.AggregateFinancialService.Account;
+using ArticleComment                      = Domic.Init.MessageBroker.AggregateArticleService.ArticleComment;
+using ArticleCommentAnswer                = Domic.Init.MessageBroker.AggregateArticleService.ArticleCommentAnswer;
 using GiftTransactionOfAggregateFinancial = Domic.Init.MessageBroker.AggregateFinancialService.GiftTransaction;
+using Term                                = Domic.Init.MessageBroker.TermService.Term;
 using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
+using TermOfComment                       = Domic.Init.MessageBroker.CommentService.Term;
+using UserOfComment                       = Domic.Init.MessageBroker.CommentService.User;
 
 #region Init
 
@@ -81,6 +86,10 @@ try
     ArticleOfComment.Register(channel);
     ArticleCommentOfComment.Register(channel);
     ArticleCommentAnswerOfComment.Register(channel);
+    TermOfComment.Register(channel);
+    TermComment.Register(channel);
+    TermCommentAnswer.Register(channel);
+    UserOfComment.Register(channel);
 
     //AggregateArticleService
     ArticleOfAggregateArticle.Register(channel);
