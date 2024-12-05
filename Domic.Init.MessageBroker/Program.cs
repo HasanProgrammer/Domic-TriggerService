@@ -124,7 +124,7 @@ try
     
     //FinancialService
     Account.Register(channel);
-    GiftTransaction.Register(channel);
+    Transaction.Register(channel);
     UserOfFinancial.Register(channel);
     
     //AggregateFinancialService

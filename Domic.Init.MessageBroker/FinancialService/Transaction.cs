@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 
 namespace Domic.Init.MessageBroker.FinancialService;
 
-public class GiftTransaction
+public class Transaction
 {
     /// <summary>
     /// 
@@ -12,6 +12,6 @@ public class GiftTransaction
     public static void Register(IModel channel)
     {
         //Main exchange
-        channel.FanOutExchangeDeclare("Financial_GiftTransaction_Exchange");
+        channel.FanOutExchangeDeclare("Financial_Transaction_Exchange");
     }
 }
