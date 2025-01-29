@@ -11,6 +11,10 @@ public class Notification
     /// <param name="channel"></param>
     public static void Register(IModel channel)
     {
+        //Retry exchange
+        channel.FanOutExchangeDeclare("Notification_Exchange_Retry_1");
+        channel.FanOutExchangeDeclare("Notification_Exchange_Retry_2");
+        
         //Main queue
         channel.QueueDeclare("Notification_OtpLog_Queue", new Dictionary<string, object> {
             { "x-delayed-type"         , "fanout" },
