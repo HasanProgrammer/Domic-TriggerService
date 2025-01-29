@@ -1,10 +1,11 @@
 ﻿using Domic.Init.MessageBroker.CommentService;
 using Domic.Init.MessageBroker.DiscoveryService;
 using Domic.Init.MessageBroker.FinancialService;
+using Domic.Init.MessageBroker.IdentityService;
+using Domic.Init.MessageBroker.NotificationService;
 using Domic.Init.MessageBroker.StateTrackerService;
 using Domic.Init.MessageBroker.TermService;
 using Domic.Init.MessageBroker.TicketService;
-using Domic.Init.MessageBroker.UserService;
 using Microsoft.Extensions.Configuration;
 using RabbitMQ.Client;
 
@@ -13,9 +14,9 @@ using Exception = System.Exception;
 
 using User                                = Domic.Init.MessageBroker.UserService.User;
 using Category                            = Domic.Init.MessageBroker.CategoryService.Category;
-using UserOfAuth                          = Domic.Init.MessageBroker.AuthService.User;
-using RoleOfAuth                          = Domic.Init.MessageBroker.AuthService.Role;
-using PermissionOfAuth                    = Domic.Init.MessageBroker.AuthService.Permission;
+using UserOfAuth                          = Domic.Init.MessageBroker.IdentityService.User;
+using RoleOfAuth                          = Domic.Init.MessageBroker.IdentityService.Role;
+using PermissionOfAuth                    = Domic.Init.MessageBroker.IdentityService.Permission;
 using CategoryOfArticle                   = Domic.Init.MessageBroker.ArticleService.Category;
 using UserOfArticle                       = Domic.Init.MessageBroker.ArticleService.User;
 using ArticleOfAggregateArticle           = Domic.Init.MessageBroker.AggregateArticleService.Article;
@@ -37,6 +38,8 @@ using AccountOfAggregateFinancial         = Domic.Init.MessageBroker.AggregateFi
 using ArticleComment                      = Domic.Init.MessageBroker.AggregateArticleService.ArticleComment;
 using ArticleCommentAnswer                = Domic.Init.MessageBroker.AggregateArticleService.ArticleCommentAnswer;
 using GiftTransactionOfAggregateFinancial = Domic.Init.MessageBroker.AggregateFinancialService.GiftTransaction;
+using Permission                          = Domic.Init.MessageBroker.UserService.Permission;
+using Role                                = Domic.Init.MessageBroker.UserService.Role;
 using Term                                = Domic.Init.MessageBroker.TermService.Term;
 using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
 using TermOfComment                       = Domic.Init.MessageBroker.CommentService.Term;
@@ -69,10 +72,14 @@ try
     Role.Register(channel);
     Permission.Register(channel);
 
-    //AuthService
+    //IdentityService
     UserOfAuth.Register(channel);
     RoleOfAuth.Register(channel);
     PermissionOfAuth.Register(channel);
+    OtpLog.Register(channel);
+    
+    //NotificationService
+    Notification.Register(channel);
 
     //CategoryService
     Category.Register(channel);

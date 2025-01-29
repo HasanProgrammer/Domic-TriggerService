@@ -2,7 +2,7 @@
 using Domic.Core.Infrastructure.Extensions;
 using RabbitMQ.Client;
 
-namespace Domic.Init.MessageBroker.AuthService;
+namespace Domic.Init.MessageBroker.IdentityService;
 
 public class Role
 {
