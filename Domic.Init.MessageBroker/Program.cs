@@ -37,7 +37,6 @@ using UserOfFinancial                     = Domic.Init.MessageBroker.FinancialSe
 using AccountOfAggregateFinancial         = Domic.Init.MessageBroker.AggregateFinancialService.Account;
 using ArticleComment                      = Domic.Init.MessageBroker.AggregateArticleService.ArticleComment;
 using ArticleCommentAnswer                = Domic.Init.MessageBroker.AggregateArticleService.ArticleCommentAnswer;
-using GiftTransactionOfAggregateFinancial = Domic.Init.MessageBroker.AggregateFinancialService.GiftTransaction;
 using Permission                          = Domic.Init.MessageBroker.UserService.Permission;
 using Role                                = Domic.Init.MessageBroker.UserService.Role;
 using Term                                = Domic.Init.MessageBroker.TermService.Term;
@@ -89,6 +88,10 @@ try
     CategoryOfArticle.Register(channel);
     UserOfArticle.Register(channel);
     
+    //TermService
+    Term.Register(channel);
+    Video.Register(channel);
+    
     //CommentService
     ArticleOfComment.Register(channel);
     ArticleCommentOfComment.Register(channel);
@@ -104,10 +107,6 @@ try
     UserOfAggregateArticle.Register(channel);
     ArticleCommentAnswer.Register(channel);
     ArticleComment.Register(channel);
-    
-    //TermService
-    Term.Register(channel);
-    Video.Register(channel);
     
     //AggregateTermService
     TermOfAggregateTerm.Register(channel);
@@ -136,7 +135,7 @@ try
     
     //AggregateFinancialService
     AccountOfAggregateFinancial.Register(channel);
-    GiftTransactionOfAggregateFinancial.Register(channel);
+    Domic.Init.MessageBroker.AggregateFinancialService.Transaction.Register(channel);
     UserOfAggregateFinancial.Register(channel);
     
     //ServiceRegistry
