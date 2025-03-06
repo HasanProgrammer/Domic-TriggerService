@@ -22,6 +22,8 @@ using UserOfArticle                       = Domic.Init.MessageBroker.ArticleServ
 using ArticleOfAggregateArticle           = Domic.Init.MessageBroker.AggregateArticleService.Article;
 using TermOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Term;
 using VideoOfAggregateTerm                = Domic.Init.MessageBroker.AggregateTermService.Video;
+using UserOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.User;
+using CategoryOfAggregateTerm             = Domic.Init.MessageBroker.AggregateTermService.Category;
 using CategoryOfAggregateArticle          = Domic.Init.MessageBroker.AggregateArticleService.Category;
 using UserOfAggregateArticle              = Domic.Init.MessageBroker.AggregateArticleService.User;
 using ExceptionOfStateTracker             = Domic.Init.MessageBroker.StateTrackerService.Exception;
@@ -109,6 +111,8 @@ try
     ArticleComment.Register(channel);
     
     //AggregateTermService
+    UserOfAggregateTerm.Register(channel);
+    CategoryOfAggregateTerm.Register(channel);
     TermOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
 
