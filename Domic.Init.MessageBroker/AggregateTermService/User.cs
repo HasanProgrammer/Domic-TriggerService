@@ -29,7 +29,7 @@ public class User
         });
 
         //Binding
-        channel.BindQueueToFanOutExchange("Category_User_Exchange"              , "AggregateTerm_User_Queue");
+        channel.BindQueueToFanOutExchange("User_User_Exchange"                  , "AggregateTerm_User_Queue");
         channel.BindQueueToFanOutExchange("AggregateTerm_User_Exchange_Retry_1" , "AggregateTerm_User_Queue_Retry");
         channel.BindQueueToFanOutExchange("AggregateTerm_User_Exchange_Retry_2" , "AggregateTerm_User_Queue");
     }
