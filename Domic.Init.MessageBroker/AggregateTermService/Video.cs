@@ -29,8 +29,8 @@ public class Video
         });
 
         //Binding
-        channel.BindQueueToFanOutExchange("Term_Term_Exchange", "AggregateTerm_Term_Queue");
-        channel.BindQueueToFanOutExchange("AggregateTerm_Video_Exchange_Retry_1", "AggregateTerm_Video_Queue_Retry");
-        channel.BindQueueToFanOutExchange("AggregateTerm_Video_Exchange_Retry_2", "AggregateTerm_Video_Queue");
+        channel.BindQueueToFanOutExchange("Term_Video_Exchange"                  , "AggregateTerm_Video_Queue");
+        channel.BindQueueToFanOutExchange("AggregateTerm_Video_Exchange_Retry_1" , "AggregateTerm_Video_Queue_Retry");
+        channel.BindQueueToFanOutExchange("AggregateTerm_Video_Exchange_Retry_2" , "AggregateTerm_Video_Queue");
     }
 }
