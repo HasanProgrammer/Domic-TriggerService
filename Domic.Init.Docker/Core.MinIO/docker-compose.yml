@@ -12,8 +12,6 @@ services:
     environment:
       - MINIO_ROOT_USER=domic
       - MINIO_ROOT_PASSWORD=domic123
-      - MINIO_ACCESS_KEY=6vYOchwo0ZfbW40GG5Qy
-      - MINIO_SECRET_KEY=qQwyDHc7tDITEOtMRfoSL2t3KJWRnlwm3Zx2DWLW
     volumes:
       - minio-data:/data
     command: server /data --console-address ":9001"
