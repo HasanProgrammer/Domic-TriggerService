@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: domic-aggregate-article-sql-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: domic-aggregate-article-sql-pod
+  template:
+    metadata:
+      labels:
+        app: domic-aggregate-article-sql-pod
+    spec:
+      containers:
+        - name: domic-aggregate-article-sql-container
+          image: 'mcr.microsoft.com/mssql/server'
+          ports:
+            - containerPort: 1433
+          env:
+            - name: ACCEPT_EULA
+              value: Y
+            - name: SA_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: global-config-map
+                  key: Q-SqlServer-Password

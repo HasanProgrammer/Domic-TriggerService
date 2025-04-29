@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: domic-aggregate-article-redis-deployment
+spec:
+  selector:
+    matchLabels:
+      app: domic-aggregate-article-redis-pod
+  template:
+    metadata:
+      labels:
+        app: domic-aggregate-article-redis-pod
+    spec:
+      containers:
+        - name: domic-aggregate-article-redis-container
+          image: 'redis'
+          command: [ 'redis-server' ]
+          ports:
+            - containerPort: 1639

@@ -1,0 +1,120 @@
+apiVersion: v1
+kine: ConfigMap
+metadata:
+  name: global-config-map
+data:
+  # Global
+  ASPNETCORE_ENVIRONMENT: Production
+  ASPNETCORE_URLS: https://+:443;http://+:80
+  ASPNETCORE_Kestrel__Certificates__Default__Password: Domic123!@#
+  ASPNETCORE_Kestrel__Certificates__Default__Path: /https/Domic.WebAPI.pfx
+  E-RabbitMQ-Host: domic.rabbit.mq
+  E-RabbitMQ-Port: 5672
+  E-RabbitMQ-Username: domic
+  E-RabbitMQ-Password: Domic123!@#
+  E-RedisConnectionString: 
+  Elastic-Username: domic
+  Elastic-Password: Domic123!@#
+  Elastic-Host: http://domic.elastic.search:9200
+  C-SqlServer-Password: Domic123!@#
+  Q-SqlServer-Password: Domic123!@#
+
+  # AggregateArticleService
+  Aggregate-Article-Elastic-Index: aggregatearticle
+  Aggregate-Article-RedisConnectionString: domic-aggregate-article-redis-service:6379
+  Aggregate-Article-SqlServerConnectionString: Server=domic-aggregate-article-sql-service,1433;Database=AggregateArticleService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Aggregate-Article-Host: domic-aggregate-article-service
+  Aggregate-Article-Port: 443
+
+  # AggregateTermService
+  Aggregate-Term-Elastic-Index: aggregateterm
+  Aggregate-Term-RedisConnectionString: domic.aggregateterm.redis:6379
+  Aggregate-Term-SqlServerConnectionString: Server=domic.aggregate.term.query.sql.server,1433;Database=AggregateTermService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Aggregate-Term-Host: domic.aggregate.term.api
+  Aggregate-Term-Port: 443
+
+  # AggregateTicketService
+  Aggregate-Ticket-Elastic-Index: aggregateticket
+  Aggregate-Ticket-RedisConnectionString: domic.aggregateticket.redis:6379
+  Aggregate-Ticket-SqlServerConnectionString: Server=domic.aggregate.ticket.command.sql.server,1433;Database=AggregateTicketService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Aggregate-Ticket-Host: domic.aggregate.ticket.api
+  Aggregate-Ticket-Port: 443
+
+  # Article
+  Article-Elastic-Index: article
+  Article-RedisConnectionString: domic.article.redis:6379
+  Article-SqlServerConnectionString: Server=domic.article.sql.server,1433;Database=ArticleService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Article-Host: domic.article.api
+  Article-Port: 443
+
+  # Category
+  Category-Elastic-Index: category
+  Category-RedisConnectionString: domic.category.redis:6379
+  Category-SqlServerConnectionString: Server=domic.category.sql.server,1433;Database=CategoryService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Category-Host: domic.category.api
+  Category-Port: 443
+
+  # Comment
+  Comment-Elastic-Index: comment
+  Comment-RedisConnectionString: domic.comment.redis:6379
+  Comment-SqlServerConnectionString: Server=domic.comment.sql.server,1433;Database=CommentService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Comment-Host: domic.article.api
+  Comment-Port: 443
+
+  # Financial
+  Financial-Elastic-Index: financial
+  Financial-RedisConnectionString: domic.financial.redis:6379
+  Financial-SqlServerConnectionString: Server=domic.financial.sql.server,1433;Database=FinancialService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Financial-Host: domic.financial.api
+  Financial-Port: 443
+
+  # Identity
+  Identity-Elastic-Index: identity
+  Identity-RedisConnectionString: domic.identity.redis:6379
+  Identity-SqlServerConnectionString: Server=domic.identity.sql.server,1433;Database=IdentityService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Identity-Host: domic.identity.api
+  Identity-Port: 443
+
+  # Notification
+  Notification-Elastic-Index: notification
+  Notification-MongoConnectionString: Server=domic.notification.sql.server,1433;Database=NotificationService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Notification-Host: domic.notification.api
+  Notification-Port: 443
+
+  # StateTracker
+  StateTracker-Elastic-Index: statetracker
+  StateTracker-MongoConnectionString: Server=domic.notification.sql.server,1433;Database=NotificationService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  StateTracker-Host: domic.statetracker.api
+  StateTracker-Port: 443
+
+  # Term
+  Term-Elastic-Index: term
+  Term-RedisConnectionString: domic.term.redis:6379
+  Term-SqlServerConnectionString: Server=domic.term.sql.server,1433;Database=TermService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Term-Host: domic.term.api
+  Term-Port: 443
+
+  # Ticket
+  Ticket-Elastic-Index: ticket
+  Ticket-RedisConnectionString: domic.ticket.redis:6379
+  Ticket-SqlServerConnectionString: Server=domic.ticket.sql.server,1433;Database=TicketService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  Ticket-Host: domic.ticket.api
+  Ticket-Port: 443
+
+  # User
+  User-Elastic-Index: user
+  User-I-RabbitMQ-Host:
+  User-I-RabbitMQ-Port:
+  User-I-RabbitMQ-Username:
+  User-I-RabbitMQ-Password:
+  User-I-RedisConnectionString: domic.identity.redis:6379
+  User-Q-SqlServerConnectionString: Server=domic.identity.sql.server,1433;Database=IdentityService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  User-C-SqlServerConnectionString: Server=domic.identity.sql.server,1433;Database=IdentityService;User ID=sa;Password=Domic123!@#;MultipleActiveResultSets=true;Integrated Security=false;
+  User-Host: domic.identity.api
+  User-Port: 443
+
+  # Gateway
+  Gateway-Elastic-Index: gateway
+  Gateway-I-RedisConnectionString: domic.gateway.redis:6379
+  Gateway-Host: domic.gateway.api
+  Gateway-Port: 443
