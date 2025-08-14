@@ -45,6 +45,8 @@ using Term                                = Domic.Init.MessageBroker.TermService
 using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
 using TermOfComment                       = Domic.Init.MessageBroker.CommentService.Term;
 using UserOfComment                       = Domic.Init.MessageBroker.CommentService.User;
+using TermCommentOfAggregateTerm          = Domic.Init.MessageBroker.AggregateTermService.TermComment;
+using TermCommentAnswerOfAggregateTerm    = Domic.Init.MessageBroker.AggregateTermService.TermCommentAnswer;
 
 #region Init
 
@@ -115,6 +117,9 @@ try
     CategoryOfAggregateTerm.Register(channel);
     TermOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
+    VideoOfAggregateTerm.Register(channel);
+    TermCommentOfAggregateTerm.Register(channel);
+    TermCommentAnswerOfAggregateTerm.Register(channel);
 
     //StateTrackerService
     Event.Register(channel);
