@@ -30,12 +30,20 @@ public class Event
         });
         
         //Binding
-        channel.BindQueueToFanOutExchange(Broker.User_Role_Exchange         , Broker.StateTracker_Event_Queue);
-        channel.BindQueueToFanOutExchange(Broker.User_User_Exchange         , Broker.StateTracker_Event_Queue);
-        channel.BindQueueToFanOutExchange(Broker.User_Permission_Exchange   , Broker.StateTracker_Event_Queue);
-        channel.BindQueueToFanOutExchange(Broker.Category_Category_Exchange , Broker.StateTracker_Event_Queue);
-        channel.BindQueueToFanOutExchange(Broker.Article_Article_Exchange   , Broker.StateTracker_Event_Queue);
-        channel.BindQueueToFanOutExchange(Broker.StateTracker_Event_Exchange_Retry_1 , Broker.StateTracker_Event_Queue_Retry);
-        channel.BindQueueToFanOutExchange(Broker.StateTracker_Event_Exchange_Retry_2 , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.User_Role_Exchange                    , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.User_User_Exchange                    , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.User_Permission_Exchange              , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.Category_Category_Exchange            , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.Article_Article_Exchange              , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Term_Term_Exchange"                         , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Term_Video_Exchange"                        , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.Comment_ArticleComment_Exchange       , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.Comment_ArticleCommentAnswer_Exchange , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Comment_TermComment_Exchange"               , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Comment_TermCommentAnswer_Exchange"         , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Ticket_Ticket_Exchange"                     , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange("Ticket_TicketComment_Exchange"              , Broker.StateTracker_Event_Queue);
+        channel.BindQueueToFanOutExchange(Broker.StateTracker_Event_Exchange_Retry_1   , Broker.StateTracker_Event_Queue_Retry);
+        channel.BindQueueToFanOutExchange(Broker.StateTracker_Event_Exchange_Retry_2   , Broker.StateTracker_Event_Queue);
     }
 }
