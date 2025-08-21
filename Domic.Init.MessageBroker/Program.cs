@@ -92,6 +92,11 @@ try
     CategoryOfArticle.Register(channel);
     UserOfArticle.Register(channel);
     
+    //FinancialService
+    Account.Register(channel);
+    Transaction.Register(channel);
+    UserOfFinancial.Register(channel);
+    
     //TermService
     Term.Register(channel);
     Video.Register(channel);
@@ -137,10 +142,6 @@ try
     UserOfAggregateTicket.Register(channel);
     CategoryOfAggregateTicket.Register(channel);
     
-    //FinancialService
-    Account.Register(channel);
-    Transaction.Register(channel);
-    UserOfFinancial.Register(channel);
     
     //AggregateFinancialService
     AccountOfAggregateFinancial.Register(channel);
