@@ -21,6 +21,7 @@ using CategoryOfArticle                   = Domic.Init.MessageBroker.ArticleServ
 using UserOfArticle                       = Domic.Init.MessageBroker.ArticleService.User;
 using ArticleOfAggregateArticle           = Domic.Init.MessageBroker.AggregateArticleService.Article;
 using TermOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Term;
+using SeasonOfAggregateTerm               = Domic.Init.MessageBroker.AggregateTermService.Season;
 using BookOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Book;
 using VideoOfAggregateTerm                = Domic.Init.MessageBroker.AggregateTermService.Video;
 using UserOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.User;
@@ -43,6 +44,7 @@ using ArticleCommentAnswer                = Domic.Init.MessageBroker.AggregateAr
 using Permission                          = Domic.Init.MessageBroker.UserService.Permission;
 using Role                                = Domic.Init.MessageBroker.UserService.Role;
 using Term                                = Domic.Init.MessageBroker.TermService.Term;
+using Season                              = Domic.Init.MessageBroker.TermService.Season;
 using Book                                = Domic.Init.MessageBroker.TermService.Book;
 using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
 using TermOfComment                       = Domic.Init.MessageBroker.CommentService.Term;
@@ -102,6 +104,7 @@ try
     //TermService
     Book.Register(channel);
     Term.Register(channel);
+    Season.Register(channel);
     Video.Register(channel);
     
     //CommentService
@@ -125,6 +128,7 @@ try
     CategoryOfAggregateTerm.Register(channel);
     BookOfAggregateTerm.Register(channel);
     TermOfAggregateTerm.Register(channel);
+    SeasonOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
     TermCommentOfAggregateTerm.Register(channel);
