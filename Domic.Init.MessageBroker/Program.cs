@@ -21,6 +21,7 @@ using CategoryOfArticle                   = Domic.Init.MessageBroker.ArticleServ
 using UserOfArticle                       = Domic.Init.MessageBroker.ArticleService.User;
 using ArticleOfAggregateArticle           = Domic.Init.MessageBroker.AggregateArticleService.Article;
 using TermOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Term;
+using BookOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.Book;
 using VideoOfAggregateTerm                = Domic.Init.MessageBroker.AggregateTermService.Video;
 using UserOfAggregateTerm                 = Domic.Init.MessageBroker.AggregateTermService.User;
 using CategoryOfAggregateTerm             = Domic.Init.MessageBroker.AggregateTermService.Category;
@@ -42,6 +43,7 @@ using ArticleCommentAnswer                = Domic.Init.MessageBroker.AggregateAr
 using Permission                          = Domic.Init.MessageBroker.UserService.Permission;
 using Role                                = Domic.Init.MessageBroker.UserService.Role;
 using Term                                = Domic.Init.MessageBroker.TermService.Term;
+using Book                                = Domic.Init.MessageBroker.TermService.Book;
 using UserOfAggregateFinancial            = Domic.Init.MessageBroker.AggregateFinancialService.User;
 using TermOfComment                       = Domic.Init.MessageBroker.CommentService.Term;
 using UserOfComment                       = Domic.Init.MessageBroker.CommentService.User;
@@ -98,6 +100,7 @@ try
     UserOfFinancial.Register(channel);
     
     //TermService
+    Book.Register(channel);
     Term.Register(channel);
     Video.Register(channel);
     
@@ -120,6 +123,7 @@ try
     //AggregateTermService
     UserOfAggregateTerm.Register(channel);
     CategoryOfAggregateTerm.Register(channel);
+    BookOfAggregateTerm.Register(channel);
     TermOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
     VideoOfAggregateTerm.Register(channel);
