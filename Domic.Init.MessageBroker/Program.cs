@@ -133,11 +133,6 @@ try
     VideoOfAggregateTerm.Register(channel);
     TermCommentOfAggregateTerm.Register(channel);
     TermCommentAnswerOfAggregateTerm.Register(channel);
-
-    //StateTrackerService
-    Event.Register(channel);
-    ExceptionOfStateTracker.Register(channel);
-    Request.Register(channel);
     
     //TicketService
     Ticket.Register(channel);
@@ -155,6 +150,11 @@ try
     AccountOfAggregateFinancial.Register(channel);
     Domic.Init.MessageBroker.AggregateFinancialService.Transaction.Register(channel);
     UserOfAggregateFinancial.Register(channel);
+    
+    //StateTrackerService
+    Event.Register(channel);
+    ExceptionOfStateTracker.Register(channel);
+    Request.Register(channel);
     
     //ServiceRegistry
     ServiceRegistry.Register(channel);
