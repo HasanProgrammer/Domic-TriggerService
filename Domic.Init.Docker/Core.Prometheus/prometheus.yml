@@ -1,10 +1,25 @@
 global:
-  scrape_interval: 5s
+  scrape_interval : 5s
   
-scrape_configs:
-  - job_name: 'gateway'
-    scheme: https
-    tls_config:
-      insecure_skip_verify: true #for develope env
-    static_configs:
-      - targets: ['domic.web.api.gateway:443']
+scrape_configs :
+  - job_name : 'domic-obs-job'
+    scheme : https
+    tls_config :
+      insecure_skip_verify : true #for develope env
+    static_configs :
+      - targets : [
+        'domic.aggregate.article.api:443',
+        'domic.aggregate.ticket.api:443',
+        'domic.article.api:443',
+        'domic.category.api:443',
+        'domic.comment.api:443',
+        'domic.discovery.api:443',
+        'domic.financial.api:443',
+        'domic.identity.api:443',
+        'domic.notification.api:443',
+        'domic.state.tracker.api:443',
+        'domic.term.api:443',
+        'domic.ticket.api:443',
+        'domic.user.api:443',
+        'domic.web.api.gateway:443',
+      ]
