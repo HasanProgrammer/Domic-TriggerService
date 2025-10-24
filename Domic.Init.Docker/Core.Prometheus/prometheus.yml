@@ -1,8 +1,10 @@
 global:
   scrape_interval: 5s
-
+  
 scrape_configs:
-  - job_name: 'domic'
+  - job_name: 'gateway'
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true #for develope env
     static_configs:
-      - targets:
-          - 'domic.web.api.gateway:80'
+      - targets: ['domic.web.api.gateway:443']
