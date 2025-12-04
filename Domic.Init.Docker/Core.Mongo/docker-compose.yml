@@ -3,7 +3,7 @@ name: 'mongo_service'
 services:
   
   domic.mongo.db:
-    image: mongo
+    image: mongo:4.4
     container_name: 'core_mongo_db'
     restart: on-failure
     ports:
