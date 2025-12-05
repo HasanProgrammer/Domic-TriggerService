@@ -1,6 +1,7 @@
-version: '3.9'
+version: "3.8"
 
 services:
+
   baget:
     image: loicsharma/baget:latest
     container_name: baget
