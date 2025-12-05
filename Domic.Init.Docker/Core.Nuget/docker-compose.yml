@@ -1,13 +1,34 @@
-version: '3.4'
+version: '3.9'
+
 services:
   baget:
     image: loicsharma/baget:latest
+    container_name: baget
     ports:
-      - "5000:80"
+        - "8000:8000"
     environment:
-      - BAGET_DATABASE_CONNECTIONSTRING=Data Source=baget.db
+      - BAGET_DATABASE_CONNECTIONSTRING=Data Source=/data/baget.db
       - BAGET_STORAGE_TYPE=FileSystem
-      - BAGET_STORAGE_PATH=/var/baget/packages
+      - BAGET_STORAGE_PATH=/data/packages
+      - BAGET_API_KEY=3-1375-1-1375-3-1375
     volumes:
-      - ./baget/packages:/var/baget/packages
-      - ./baget/data:/var/baget/data
+      - ./data:/data
+    networks:
+      - domic
+
+    nginx.nuget:
+      build:
+        context: .
+        dockerfile: Dockerfile.Nginx
+      container_name: nginx_nuget
+      networks:
+        - domic
+      ports:
+        - "443:443"
+        - "80:80"
+      depends_on:
+        - domic
+
+networks:
+  domic:
+    external: true
