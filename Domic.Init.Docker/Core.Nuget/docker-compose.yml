@@ -16,18 +16,18 @@ services:
     networks:
       - domic
 
-    nginx.nuget:
-      build:
-        context: .
-        dockerfile: Dockerfile.Nginx
-      container_name: nginx_nuget
-      networks:
-        - domic
-      ports:
-        - "443:443"
-        - "80:80"
-      depends_on:
-        - domic
+  nginx.nuget:
+    build:
+      context: .
+      dockerfile: Dockerfile.Nginx
+    container_name: nginx_nuget
+    networks:
+      - domic
+    ports:
+      - "443:443"
+      - "80:80"
+    depends_on:
+      - domic
 
 networks:
   domic:
