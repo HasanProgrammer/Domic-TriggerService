@@ -1,0 +1,13 @@
+version: '3.4'
+services:
+  baget:
+    image: loicsharma/baget:latest
+    ports:
+      - "5000:80"
+    environment:
+      - BAGET_DATABASE_CONNECTIONSTRING=Data Source=baget.db
+      - BAGET_STORAGE_TYPE=FileSystem
+      - BAGET_STORAGE_PATH=/var/baget/packages
+    volumes:
+      - ./baget/packages:/var/baget/packages
+      - ./baget/data:/var/baget/data
