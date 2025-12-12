@@ -19,9 +19,7 @@ services:
 
 volumes:
   mongo-data:
-    driver: local
   mongo-config:
-    driver: local
 
 networks:
   domic:
