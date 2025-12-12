@@ -9,10 +9,19 @@ services:
     ports:
       - '27017:27017'
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=domic
-      - MONGO_INITDB_ROOT_PASSWORD=434624
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=domic
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=434624
+    volumes:
+      - ~/services/Data/mongo-data:/data/db # Persist MongoDB data
+      - ~/services/Data/mongo-config:/data/configdb # Persist MongoDB configuration
     networks:
       - domic
+
+volumes:
+  mongo-data:
+    driver: local
+  mongo-config:
+    driver: local
 
 networks:
   domic:
