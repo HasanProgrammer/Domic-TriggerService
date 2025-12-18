@@ -155,6 +155,7 @@ try
     Event.Register(channel);
     ExceptionOfStateTracker.Register(channel);
     Request.Register(channel);
+    Log.Register(channel);
     
     //ServiceRegistry
     ServiceRegistry.Register(channel);
