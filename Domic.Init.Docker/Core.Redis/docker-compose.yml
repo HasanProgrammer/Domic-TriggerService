@@ -8,8 +8,13 @@ services:
     command: 'redis-server'
     ports:
       - '6379:6379'
+    volumes:
+        - redis_data:/data
     networks:
       - domic
+
+volumes:
+  redis_data:
 
 networks:
   domic:
