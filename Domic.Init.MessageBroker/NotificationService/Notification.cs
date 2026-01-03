@@ -33,6 +33,7 @@ public class Notification
         
         //Binding
         channel.BindQueueToFanOutExchange("Notification_EmailDelivery_Exchange" , Broker.User_User_Queue);
+        channel.BindQueueToFanOutExchange("Notification_EmailDelivery_Exchange" , Broker.Auth_User_Queue);
         channel.BindQueueToFanOutExchange("Identity_OtpLog_Exchange"            , "Notification_OtpLog_Queue");
         channel.BindQueueToFanOutExchange("Notification_Exchange_Retry_1"       , "Notification_OtpLog_Queue_Retry");
         channel.BindQueueToFanOutExchange("Notification_Exchange_Retry_2"       , "Notification_OtpLog_Queue");
