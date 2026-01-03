@@ -84,6 +84,7 @@ try
     RoleOfAuth.Register(channel);
     PermissionOfAuth.Register(channel);
     OtpLog.Register(channel);
+    EmailVerification.Register(channel);
     
     //NotificationService
     Notification.Register(channel);
