@@ -1,5 +1,4 @@
-﻿using Domic.Core.Domain.Constants;
-using Domic.Core.Infrastructure.Extensions;
+﻿using Domic.Core.Infrastructure.Extensions;
 using RabbitMQ.Client;
 
 namespace Domic.Init.MessageBroker.NotificationService;
@@ -41,25 +40,25 @@ public class Notification
         //for [EmailVerification] code
         
         //Retry exchange
-        channel.FanOutExchangeDeclare("Notification_EmailVerification_Exchange_Retry_1");
-        channel.FanOutExchangeDeclare("Notification_EmailVerification_Exchange_Retry_2");
+        channel.FanOutExchangeDeclare("Notification_EmailOtpLog_Exchange_Retry_1");
+        channel.FanOutExchangeDeclare("Notification_EmailOtpLog_Exchange_Retry_2");
         
         //Main queue
-        channel.QueueDeclare("Notification_EmailDelivery_Queue", new Dictionary<string, object> {
+        channel.QueueDeclare("Notification_EmailOtpLog_Queue", new Dictionary<string, object> {
             { "x-delayed-type"         , "fanout" },
-            { "x-dead-letter-exchange" , "Notification_EmailVerification_Exchange_Retry_1" }
+            { "x-dead-letter-exchange" , "Notification_EmailOtpLog_Exchange_Retry_1" }
         });
     
         //Retry queue
-        channel.QueueDeclare("Notification_EmailDelivery_Queue_Retry", new Dictionary<string, object> {
+        channel.QueueDeclare("Notification_EmailOtpLog_Queue_Retry", new Dictionary<string, object> {
             { "x-message-ttl"          , 5000 }     , //5s
             { "x-delayed-type"         , "fanout" } ,
-            { "x-dead-letter-exchange" , "Notification_EmailVerification_Exchange_Retry_2" }
+            { "x-dead-letter-exchange" , "Notification_EmailOtpLog_Exchange_Retry_2" }
         });
         
         //Binding
-        channel.BindQueueToFanOutExchange("Identity_EmailVerification_Exchange"             , "Notification_EmailDelivery_Queue");
-        channel.BindQueueToFanOutExchange("Notification_EmailVerification_Exchange_Retry_1" , "Notification_EmailDelivery_Queue_Retry");
-        channel.BindQueueToFanOutExchange("Notification_EmailVerification_Exchange_Retry_2" , "Notification_EmailDelivery_Queue");
+        channel.BindQueueToFanOutExchange("Identity_EmailOtpLog_Exchange"             , "Notification_EmailOtpLog_Queue");
+        channel.BindQueueToFanOutExchange("Notification_EmailOtpLog_Exchange_Retry_1" , "Notification_EmailOtpLog_Queue_Retry");
+        channel.BindQueueToFanOutExchange("Notification_EmailOtpLog_Exchange_Retry_2" , "Notification_EmailOtpLog_Queue");
     }
 }

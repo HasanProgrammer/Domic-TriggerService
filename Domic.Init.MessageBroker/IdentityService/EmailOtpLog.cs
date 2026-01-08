@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 
 namespace Domic.Init.MessageBroker.IdentityService;
 
-public class EmailVerification
+public class EmailOtpLog
 {
     /// <summary>
     /// 
@@ -12,6 +12,6 @@ public class EmailVerification
     public static void Register(IModel channel)
     {
         //Retry exchange
-        channel.FanOutExchangeDeclare("Identity_EmailVerification_Exchange");
+        channel.FanOutExchangeDeclare("Identity_EmailOtpLog_Exchange");
     }
 }
